@@ -24,7 +24,7 @@ const Question = styled.div`
   border: solid black;
   border-width: 1px;
   border-radius: 8px;
-  width: 100%;
+  width: 80vw;
   cursor: pointer;
   background-color: #f9f9f9
 
@@ -61,7 +61,7 @@ const Answer = styled.div`
   border: solid black;
   border-width: 1px;
   border-radius: 8px;
-  width: 100%;
+  width: 80vw;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
   color: #333;
   line-height: 1.6;
