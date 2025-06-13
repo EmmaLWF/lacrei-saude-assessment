@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Link from 'next/link'; 
 import { FaQuestionCircle } from 'react-icons/fa';
 
-//HomeButton
 
 const StyledHomeButton = styled.button`
   background-color: transparent;
@@ -28,8 +27,6 @@ const HomeButton = ({ children }: HomeButtonProps) => {
         </StyledHomeButton>
     )
 }
-
-//AjudaButton
 
 const StyledAjudaButton = styled.button`
   background: none;
@@ -55,6 +52,7 @@ const StyledAjudaButton = styled.button`
   }
 `;
 
+
 const AjudaButton = () => {
     return (
         <StyledAjudaButton>
@@ -62,8 +60,6 @@ const AjudaButton = () => {
         </StyledAjudaButton>
     )
 }
-
-//Header
 
 const StyledHeader = styled.header`
   background-color: #fff;

@@ -7,19 +7,6 @@ const MainContainer = styled.main`
   font-family: sans-serif;
 `;
 
-const Section = styled.section`
-  width: 100%;
-  padding: 4rem 5%;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  @media (max-width: 900px) {
-    padding: 3rem 1.5rem;
-  }
-`;
-
 const HeroSection = styled.div`
   position: relative; 
   width: 100%;
@@ -32,7 +19,7 @@ const HeroSection = styled.div`
   }
 `;
 
-const HeroBackgroundImage = styled.img`
+const HeroImage = styled.img`
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -116,7 +103,21 @@ const HeroButton = styled.button`
     }
 `;
 
-const SectionTitle = styled.h2`
+const Section = styled.section`
+  width: 100%;
+  padding: 4rem 5%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media (max-width: 900px) {
+    padding: 3rem 1.5rem;
+    background-color: white;
+  }
+`;
+
+const SectionOneTitle = styled.h2`
   font-size: 2.5rem;
   color: #333;
   margin: 0;
@@ -127,14 +128,14 @@ const SectionTitle = styled.h2`
   }
 `;
 
-const SectionSubtitle = styled.p`
+const SectionOneSubtitle = styled.p`
   font-size: 1.25rem;
   color: #555;
   margin-top: 0.5rem;
   text-align: center;
 `;
 
-const SeparatorLine = styled.div`
+const SeparatorOneDividingLine = styled.div`
   width: 8rem;
   height: 4px;
   background: rgb(1, 135, 98);
@@ -155,7 +156,7 @@ const ThreeItemsGrid = styled.div`
   }
 `;
 
-const FeatureCard = styled.div`
+const Item = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -165,12 +166,12 @@ const FeatureCard = styled.div`
   border-radius: 8px;
 `;
 
-const CardIcon = styled.img`
+const ItemIcon = styled.img`
   height: 60px;
   margin-bottom: 1.5rem;
 `;
 
-const CardTitle = styled.h3`
+const ItemTitle = styled.h3`
   font-family: Nunito, sans-serif;
   font-size: 2rem;
   font-style: normal;
@@ -179,10 +180,9 @@ const CardTitle = styled.h3`
   margin-top: 0.5rem;
   background: linear-gradient(105.43deg, rgb(1, 131, 131) 14.39%, rgb(1, 70, 135) 84.69%) text;
   -webkit-text-fill-color: transparent;
-  // margin: 0 0 1rem 0;
 `;
 
-const CardText = styled.p`
+const ItemText = styled.p`
   font-size: 1rem;
   line-height: 1.6;
   color: #555;
@@ -223,10 +223,11 @@ const AboutTextBlock = styled.div`
   margin-left: -2%;
   z-index: 2;
 
-  @media (max-width: 900px) {
-  width: 100%;
-  margin-left: 0;
-  z-index: auto;
+  @media (max-width: 909px) {
+    width: 90%;
+    margin-left: 0;
+    z-index: auto;
+  } 
 `;
 
 const AboutButton = styled.button`
@@ -256,11 +257,11 @@ const AboutButton = styled.button`
 `;
 
 
-export default function Home() {
+export default function Home () {
   return (
    <MainContainer>
     <HeroSection>
-      <HeroBackgroundImage src={'https://lacreisaude.com.br/_next/static/media/greetings-banner-image.3ec83257.png'} alt="Fundo com cores da bandeira LGBTQIAPN+ e um estetoscópio"/>
+      <HeroImage src={'https://lacreisaude.com.br/_next/static/media/greetings-banner-image.3ec83257.png'} alt="Fundo com cores da bandeira LGBTQIAPN+ e um estetoscópio"/>
       <HeroTextBlock>
         <HeroTitle>Olá, você está na Lacrei Saúde!</HeroTitle>
         <HeroText>Conectamos pessoas LGBTQIAPN+ com profissionais de saúde qualificados, proporcionando experiências de cuidado seguras e inclusivas.</HeroText>
@@ -276,25 +277,25 @@ export default function Home() {
     </HeroSection>
 
     <Section>
-      <SectionTitle>Conheça o jeito Lacrei Saúde de cuidar</SectionTitle>
-      <SeparatorLine />
-      <SectionSubtitle>Atendimento de qualidade e inclusivo</SectionSubtitle>
+      <SectionOneTitle>Conheça o jeito Lacrei Saúde de cuidar</SectionOneTitle>
+      <SeparatorOneDividingLine />
+      <SectionOneSubtitle>Atendimento de qualidade e inclusivo</SectionOneSubtitle>
       <ThreeItemsGrid>
-        <FeatureCard>
-          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/handshake-icon.422966a2.svg'} alt="Ícone de aperto de mãos"/>
-          <CardTitle>Inclusão</CardTitle>
-          <CardText>Nossa plataforma digital é acessível e atendemos toda comunidade LGBTQIAPN+.</CardText>
-        </FeatureCard>
-        <FeatureCard>
-          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/heart-icon.081c2229.svg'} alt="Ícone de coração"/>
-          <CardTitle>Acolhimento</CardTitle>
-          <CardText>As pessoas profissionais da saúde entendem as necessidades da comunidade LGBTQIAPN+.</CardText>
-        </FeatureCard>
-        <FeatureCard>
-          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/shield-icon.54d509f2.svg'} alt="Ícone de escudo"/>
-          <CardTitle>Segurança</CardTitle>
-          <CardText>Protegemos seus dados e validamos pacientes e profissionais da saúde.</CardText>
-        </FeatureCard>
+        <Item>
+          <ItemIcon src={'https://lacreisaude.com.br/_next/static/media/handshake-icon.422966a2.svg'} alt="Ícone de aperto de mãos"/>
+          <ItemTitle>Inclusão</ItemTitle>
+          <ItemText>Nossa plataforma digital é acessível e atendemos toda comunidade LGBTQIAPN+.</ItemText>
+        </Item>
+        <Item>
+          <ItemIcon src={'https://lacreisaude.com.br/_next/static/media/heart-icon.081c2229.svg'} alt="Ícone de coração"/>
+          <ItemTitle>Acolhimento</ItemTitle>
+          <ItemText>As pessoas profissionais da saúde entendem as necessidades da comunidade LGBTQIAPN+.</ItemText>
+        </Item>
+        <Item>
+          <ItemIcon src={'https://lacreisaude.com.br/_next/static/media/shield-icon.54d509f2.svg'} alt="Ícone de escudo"/>
+          <ItemTitle>Segurança</ItemTitle>
+          <ItemText>Protegemos seus dados e validamos pacientes e profissionais da saúde.</ItemText>
+        </Item>
      </ThreeItemsGrid>
     </Section>
     
@@ -302,11 +303,11 @@ export default function Home() {
       <AboutSectionGrid>
         <AboutImage src={'https://lacreisaude.com.br/_next/static/media/people-holding-flag.8d096827.png'} alt="Pessoas segurando a bandeira do arco-íris"/>
         <AboutTextBlock>
-          <SectionTitle style={{ fontSize: '2.5rem' }}>O que é a Lacrei Saúde?</SectionTitle>
-          <SeparatorLine style={{ margin: '1rem 0' }}/>
-          <CardText style={{ textAlign: 'left' }}>O nosso papel é construir a conexão entre as pessoas da comunidade LGBTQIAPN+ que precisam de atendimento clínico com profissionais da saúde.</CardText> 
-          <CardText style={{ textAlign: 'left', marginTop: '1rem' }}>Tudo isso com segurança, inclusão e representatividade.</CardText>
-          <CardText style={{ textAlign: 'left', marginTop: '1rem' }}>Surgimos da esperança de ter um atendimento clínico qualificado, seguro e empático para todas as pessoas.</CardText>
+          <SectionOneTitle style={{ fontSize: '2.5rem' }}>O que é a Lacrei Saúde?</SectionOneTitle>
+          <SeparatorOneDividingLine style={{ margin: '1rem 0' }}/>
+          <ItemText style={{ textAlign: 'left' }}>O nosso papel é construir a conexão entre as pessoas da comunidade LGBTQIAPN+ que precisam de atendimento clínico com profissionais da saúde.</ItemText> 
+          <ItemText style={{ textAlign: 'left', marginTop: '1rem' }}>Tudo isso com segurança, inclusão e representatividade.</ItemText>
+          <ItemText style={{ textAlign: 'left', marginTop: '1rem' }}>Surgimos da esperança de ter um atendimento clínico qualificado, seguro e empático para todas as pessoas.</ItemText>
           <AboutButton>
             <Link href='https://lacreisaude.com.br/quem-somos/'>Conhecer</Link>
           </AboutButton>
