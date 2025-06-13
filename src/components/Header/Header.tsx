@@ -11,9 +11,11 @@ const StyledHomeButton = styled.button`
   padding: 0;
   cursor: pointer;
 
+
   @media (max-width: 768px) {
     display: none;
   }
+
 `;
 
 interface HomeButtonProps {
@@ -88,6 +90,11 @@ const MobileTitle = styled.span`
   @media (max-width: 768px) {
     display: block;
   }
+
+  & a {
+    color: inherit;
+    text-decoration: none;
+  }
 `;
 
 const MobileHelpIcon = styled.a`
@@ -108,8 +115,11 @@ const Header = () => {
                     <img src="https://lacreisaude.com.br/_next/static/media/logo_lacrei_desktop.7ae004ab.svg" alt="Logo" className="logo" />
                 </HomeButton>
                 <AjudaButton/>
-
-                <MobileTitle>Lacrei Saúde</MobileTitle>
+                
+                  <MobileTitle>
+                    <Link href="/">Lacrei Saúde</Link>
+                  </MobileTitle>
+                
                 <MobileHelpIcon href="/ajuda">
                   <FaQuestionCircle />
                 </MobileHelpIcon>

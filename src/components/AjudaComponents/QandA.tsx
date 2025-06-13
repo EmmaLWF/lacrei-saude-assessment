@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const MainContainer = styled.main`
+const Section = styled.div`
   font-family: sans-serif;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 0.5rem;
+  width: 100%;
 `;
 
 const Question = styled.div`
@@ -23,12 +24,11 @@ const Question = styled.div`
   border: solid black;
   border-width: 1px;
   border-radius: 8px;
-  width: 40em;
+  width: 100%;
   cursor: pointer;
   background-color: #f9f9f9
-  box-sizing: border-box;
 
-  @media (max-width: 900px) {
+  @media (max-width: 908px) {
     max-width: 100%;
   }
 `;
@@ -61,20 +61,15 @@ const Answer = styled.div`
   border: solid black;
   border-width: 1px;
   border-radius: 8px;
-  width: 40em;
+  width: 100%;
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.05);
-  max-width: 45em;
   color: #333;
   line-height: 1.6;
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   margin-top: -8px;
-  box-sizing: border-box;
 
-  @media (max-width: 900px) {
-    width: 100%;
-  }
 `;
 
 interface QandAItemProps {
@@ -90,14 +85,14 @@ const QandA: React.FC<QandAItemProps> = ({ question, answer }) => {
   };
 
   return (
-    <MainContainer>
+    <Section>
       <Question onClick={toggleOpen}>
         <QuestionTitle>{question}</QuestionTitle>
         <QuestionIcon src="/down-arrow.png" alt="ícone de exibição de pergunta" className={isOpen ? 'open' : ''}/>
       </Question>
       
       {isOpen && <Answer>{answer}</Answer>}
-    </MainContainer>
+    </Section>
   );
 }
 
