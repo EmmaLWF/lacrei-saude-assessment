@@ -7,8 +7,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn, FaRegEnvelope } from 'react-ico
 const StyledFooter = styled.footer`
   background-color: #fff;
   padding: 4rem 5% 1rem;
-  font-family: sans-serif;
-  color: #555;
+  color: #FFFFFF;
 `;
 
 const MainFooterGrid = styled.div`
@@ -16,7 +15,7 @@ const MainFooterGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2.5rem;
   margin-bottom: 3rem;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid #B2DFD0;
   padding-bottom: 3rem;
 
   @media (max-width: 768px) {
@@ -34,12 +33,12 @@ const FooterColumn = styled.div`
 const ColumnTitle = styled.h3`
   font-size: 1.1rem;
   font-weight: bold;
-  color: #333;
+  color: #131313;
   margin: 0 0 0.5rem 0;
 `;
 
 const FooterLink = styled.a`
-  color: #555;
+  color: #404040;
   text-decoration: none;
   font-size: 1rem;
 
@@ -70,20 +69,25 @@ const SocialIconsContainer = styled.div`
 const SocialIconLink = styled.a`
   color: #018762;
   font-size: 1.5rem;
-  &:hover { color: #006d4f; }
 `;
 
 const Disclaimer = styled.p`
   font-size: 0.8rem;
-  color: #888;
+  color: #737373;
   line-height: 1.5;
   margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const Copyright = styled.p`
   font-size: 0.8rem;
-  color: #888;
+  color: #737373;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 
@@ -101,7 +105,7 @@ const Footer = () => {
                         <SocialIconLink href="https://www.facebook.com/lacrei.saude/"><FaFacebookF /></SocialIconLink>
                         <SocialIconLink href="https://www.instagram.com/lacrei.saude/#"><FaInstagram /></SocialIconLink>
                         <SocialIconLink href="https://www.linkedin.com/company/lacreisaude/"><FaLinkedinIn /></SocialIconLink>
-                        <SocialIconLink href="#"><FaRegEnvelope /></SocialIconLink>
+                        <SocialIconLink href="mailto:contato@lacreisaude.com.br"><FaRegEnvelope /></SocialIconLink>
                     </SocialIconsContainer>
     
                 </FooterColumn>

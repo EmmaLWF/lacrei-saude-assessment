@@ -5,7 +5,6 @@ import Link from 'next/link';
 import QandA from '../../components/AjudaComponents/QandA'
 
 const MainContainer = styled.main`
-  font-family: sans-serif;
   display: flex;
   align-items: flex-start;
   flex-direction: column;
@@ -23,7 +22,7 @@ const MainContainer = styled.main`
 const SearchPath = styled.div`
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: #2D2D2D;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -39,7 +38,7 @@ const InicioSearchPath = styled.div`
   font-size: 14px;
   font-weight: bold;
   line-height: 1.6;
-  color: gray;
+  color: #2D2D2D;
   margin: 10px;
   text-decoration: none;
   border: 2px solid transparent;
@@ -53,8 +52,9 @@ const InicioSearchPath = styled.div`
 const SearchPathIcon = styled.img`
   align-items: center;
   justify-content: flex-end;
-  height: 8px;
-  width: 8px;
+  height: 14px;
+  width: 14px;
+  margin: 10px;
 `;
 
 const PageTitles = styled.div`
@@ -70,7 +70,7 @@ const AjudaTitle = styled.h1`
   font-weight: 700;
   font-size: 3rem;
   line-height: 1.2;
-  color: rgb(1, 135, 98);
+  color: #018762;
   margin: 10px;
 
   @media (max-width: 942px) {
@@ -78,10 +78,18 @@ const AjudaTitle = styled.h1`
   }
 `;
 
+const BreadcrumbCurrentPage = styled.span`
+  font-size: 14px;
+  margin: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #018762;
+`;
+
 const AjudaSubtitle = styled.p`
   font-size: 1rem;
   line-height: 1.6;
-  color: #555;
+  color: #2D2D2D;
   margin: 15px;
 
   @media (max-width: 942px) {
@@ -109,6 +117,14 @@ const ContactSection = styled.div`
   }
 `;
 
+const ContactSectionTitle = styled.h2`
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 1.2;
+  color: #018762;
+  margin: 10px;
+`;
+
   const ContactButton = styled.button`
   background-color: #018762;
   color: white;
@@ -123,7 +139,7 @@ const ContactSection = styled.div`
   transition: background-color 0.3s ease;
 
   &:hover {
-  background-color: #006d4f;
+  background-color: #007756;
    }
 
    & a {
@@ -144,8 +160,8 @@ const AjudaPage = () => {
         <MainContainer>
             <SearchPath>
                 <InicioSearchPath><Link href={'/'}>Início</Link></InicioSearchPath>
-                <SearchPathIcon src="/next-arrow.png" style={{ margin: '10px' }} alt="Ícone do caminho de pesquisa"/>
-                <AjudaTitle style={{ fontSize: '14px', margin: '10px' }} > Dúvidas Frequentes </AjudaTitle> 
+                <SearchPathIcon src="/next-arrow-icon.svg" alt="Ícone do caminho de pesquisa"/>
+                <BreadcrumbCurrentPage> Dúvidas Frequentes </BreadcrumbCurrentPage> 
             </SearchPath>
             <PageTitles>
               <AjudaTitle>Dúvidas Frequentes</AjudaTitle> 
@@ -180,7 +196,7 @@ const AjudaPage = () => {
             </SectionQuestions>
 
             <ContactSection>
-                <AjudaTitle style={{ fontSize: '28px' }}>Não encontrou o que procurava?</AjudaTitle>
+                <ContactSectionTitle>Não encontrou o que procurava?</ContactSectionTitle>
                 <ContactButton>
                 <Link href="mailto:contato@lacreisaude.com.br">Enviar e-mail</Link>
                 </ContactButton>
