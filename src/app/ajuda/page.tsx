@@ -127,7 +127,11 @@ const ContactSectionTitle = styled.h2`
 
   const ContactButton = styled.button`
   background-color: #018762;
-  color: white;
+  color: #FFFFFF;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: none;
   margin: 20px;
   border-radius: 8px;
@@ -142,11 +146,6 @@ const ContactSectionTitle = styled.h2`
   background-color: #007756;
    }
 
-   & a {
-    color: inherit;
-    text-decoration: none;
-  }
-
   @media (min-width: 900px) {
     width: 100%;
     max-width: 300px;
@@ -154,21 +153,20 @@ const ContactSectionTitle = styled.h2`
 `;
 
 
-
 const AjudaPage = () => {
     return(
-        <MainContainer>
-            <SearchPath>
-                <InicioSearchPath><Link href={'/'}>Início</Link></InicioSearchPath>
-                <SearchPathIcon src="/next-arrow-icon.svg" alt="Ícone do caminho de pesquisa"/>
-                <BreadcrumbCurrentPage> Dúvidas Frequentes </BreadcrumbCurrentPage> 
+        <MainContainer aria-label="Página de Ajuda - Dúvidas Frequentes da Lacrei Saúde">
+            <SearchPath aria-label="Caminho de navegação">
+                <InicioSearchPath><Link href={'/'} aria-label="Ir para a página inicial">Início</Link></InicioSearchPath>
+                <SearchPathIcon src="/next-arrow-icon.svg" alt="Ícone do caminho de pesquisa" aria-label="Ícone de seta do caminho de navegação"/>
+                <BreadcrumbCurrentPage aria-label="Página atual"> Dúvidas Frequentes </BreadcrumbCurrentPage> 
             </SearchPath>
             <PageTitles>
-              <AjudaTitle>Dúvidas Frequentes</AjudaTitle> 
-              <AjudaSubtitle>Aqui, você encontra as dúvidas mais frequentes!</AjudaSubtitle> 
+              <AjudaTitle aria-label="Título da página de dúvidas frequentes">Dúvidas Frequentes</AjudaTitle> 
+              <AjudaSubtitle aria-label="Descrição das dúvidas frequentes">Aqui, você encontra as dúvidas mais frequentes!</AjudaSubtitle> 
             </PageTitles>
             
-            <SectionQuestions>
+            <SectionQuestions aria-label="Seção de perguntas e respostas frequentes">
               <QandA 
                 question="Como faço para me cadastrar na Lacrei Saúde?"
                 answer="Na página inicial, clique em “Para pacientes” ou “Buscar atendimento” caso você seja um paciente. Caso você seja um profissional da saúde, clique em “Para profissionais” ou “Oferecer atendimento”."
@@ -195,10 +193,10 @@ const AjudaPage = () => {
               />
             </SectionQuestions>
 
-            <ContactSection>
-                <ContactSectionTitle>Não encontrou o que procurava?</ContactSectionTitle>
-                <ContactButton>
-                <Link href="mailto:contato@lacreisaude.com.br">Enviar e-mail</Link>
+            <ContactSection aria-label="Seção de contato">
+                <ContactSectionTitle aria-label="Título da seção de contato">Não encontrou o que procurava?</ContactSectionTitle>
+                <ContactButton aria-label="Enviar e-mail para o suporte da Lacrei Saúde" as={Link} href="mailto:contato@lacreisaude.com.br">
+                Enviar e-mail
                 </ContactButton>
             </ContactSection>
         </MainContainer>

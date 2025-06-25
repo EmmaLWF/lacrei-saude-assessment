@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-const Section = styled.div`
+const QuestionAndAnswer = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -10,7 +10,7 @@ const Section = styled.div`
   width: 100%;
 `;
 
-const Question = styled.div`
+const Question = styled.button`
   font-size: 16px;
   font-weight: 600;
   display: flex;
@@ -30,6 +30,7 @@ const Question = styled.div`
     max-width: 100%;
   }
 `;
+
 
 const QuestionTitle = styled.p`
   font-size: 16px;
@@ -62,9 +63,7 @@ const Answer = styled.div`
   flex-flow: row nowrap;
   align-items: center;
   margin-top: -8px;
-
 `;
-
 
 interface QandAItemProps {
   question: string;
@@ -78,15 +77,27 @@ const QandA: React.FC<QandAItemProps> = ({ question, answer }) => {
     setIsOpen(!isOpen);
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+    console.log('event.key', event.key);
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault();
+      toggleOpen();
+    }
+  };  
+
+
   return (
-    <Section>
-      <Question onClick={toggleOpen}>
-        <QuestionTitle>{question}</QuestionTitle>
-        <QuestionIcon src="/down-arrow-icon.svg" alt="ícone de exibição de pergunta" $isOpen={isOpen}/>
+    <QuestionAndAnswer tabIndex={0} onKeyDown={handleKeyDown} aria-label="Pergunta e resposta frequente">
+      <Question 
+      onClick={toggleOpen} 
+      aria-expanded={isOpen}
+      aria-label={isOpen ? `Fechar resposta para: ${question}` : `Abrir resposta para: ${question}`}
+      >
+        <QuestionTitle aria-label={`Pergunta: ${question}`}>{question}</QuestionTitle>
+        <QuestionIcon src="/down-arrow-icon.svg" alt="ícone de exibição de pergunta" aria-label="Ícone de expandir ou recolher resposta" $isOpen={isOpen}/>
       </Question>
-      
-      {isOpen && <Answer>{answer}</Answer>}
-    </Section>
+      {isOpen && <Answer aria-label={`Resposta: ${answer}`}>{answer}</Answer>}
+    </QuestionAndAnswer>
   );
 }
 

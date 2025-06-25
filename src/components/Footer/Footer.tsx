@@ -94,40 +94,40 @@ const Copyright = styled.p`
 
 const Footer = () => {
     return (
-        <StyledFooter>
+        <StyledFooter aria-label="Rodapé do site Lacrei Saúde">
             <MainFooterGrid>
                 <FooterColumn>
                     <FooterLogo 
                         src="https://lacreisaude.com.br/_next/static/media/logo_lacrei_desktop.7ae004ab.svg" 
                         alt="Logo Lacrei Saúde"
+                        aria-label="Logo da Lacrei Saúde"
                     />
-                    <SocialIconsContainer>
-                        <SocialIconLink href="https://www.facebook.com/lacrei.saude/"><FaFacebookF /></SocialIconLink>
-                        <SocialIconLink href="https://www.instagram.com/lacrei.saude/#"><FaInstagram /></SocialIconLink>
-                        <SocialIconLink href="https://www.linkedin.com/company/lacreisaude/"><FaLinkedinIn /></SocialIconLink>
-                        <SocialIconLink href="mailto:contato@lacreisaude.com.br"><FaRegEnvelope /></SocialIconLink>
+                    <SocialIconsContainer aria-label="Redes sociais da Lacrei Saúde">
+                        <SocialIconLink href="https://www.facebook.com/lacrei.saude/" aria-label="Facebook da Lacrei Saúde"><FaFacebookF /></SocialIconLink>
+                        <SocialIconLink href="https://www.instagram.com/lacrei.saude/#" aria-label="Instagram da Lacrei Saúde"><FaInstagram /></SocialIconLink>
+                        <SocialIconLink href="https://www.linkedin.com/company/lacreisaude/" aria-label="LinkedIn da Lacrei Saúde"><FaLinkedinIn /></SocialIconLink>
+                        <SocialIconLink href="mailto:contato@lacreisaude.com.br" aria-label="Enviar e-mail para Lacrei Saúde"><FaRegEnvelope /></SocialIconLink>
                     </SocialIconsContainer>
-    
                 </FooterColumn>
                 <FooterColumn>
                     <ColumnTitle>Lacrei Saúde</ColumnTitle>
-                    <FooterLink href="https://lacreisaude.com.br/quem-somos/">Quem Somos</FooterLink>
-                    <FooterLink href="https://lacreisaude.com.br/quem-somos/#proposito">Nosso Propósito</FooterLink>
+                    <FooterLink href="https://lacreisaude.com.br/quem-somos/" aria-label="Quem Somos">Quem Somos</FooterLink>
+                    <FooterLink href="https://lacreisaude.com.br/quem-somos/#proposito" aria-label="Nosso Propósito">Nosso Propósito</FooterLink>
                 </FooterColumn>
                 <FooterColumn>
                     <ColumnTitle>Saúde</ColumnTitle>
-                    <FooterLink href="https://paciente.lacreisaude.com.br/">Buscar atendimento</FooterLink>
-                    <FooterLink href="https://profissional.lacreisaude.com.br/">Oferecer atendimento</FooterLink>
+                    <FooterLink href="https://paciente.lacreisaude.com.br/" aria-label="Buscar atendimento">Buscar atendimento</FooterLink>
+                    <FooterLink href="https://profissional.lacreisaude.com.br/" aria-label="Oferecer atendimento">Oferecer atendimento</FooterLink>
                 </FooterColumn>
                 <FooterColumn>
                     <ColumnTitle>Segurança e Privacidade</ColumnTitle>
-                    <FooterLink href="https://lacreisaude.com.br/politica-de-privacidade/">Política de Privacidade</FooterLink>
-                    <FooterLink href="https://lacreisaude.com.br/termos-de-uso/">Termos de Uso</FooterLink>
+                    <FooterLink href="https://lacreisaude.com.br/politica-de-privacidade/" aria-label="Política de Privacidade">Política de Privacidade</FooterLink>
+                    <FooterLink href="https://lacreisaude.com.br/termos-de-uso/" aria-label="Termos de Uso">Termos de Uso</FooterLink>
                 </FooterColumn>
             </MainFooterGrid>
 
-            <Disclaimer>A Lacrei Saúde não oferece tratamento médico emergencial. Em caso de emergência procure o hospital mais próximo. Em caso de auxílio psicológico, ligue para 188 (CVV) ou acesse o site www.cvv.org.br</Disclaimer>
-            <Copyright>Copyright © 2024 Lacrei Saúde. Todos os direitos reservados. CNPJ: 51.265.351/0001-65</Copyright>
+            <Disclaimer aria-label="Aviso de emergência">A Lacrei Saúde não oferece tratamento médico emergencial. Em caso de emergência procure o hospital mais próximo. Em caso de auxílio psicológico, ligue para 188 (CVV) ou acesse o site www.cvv.org.br</Disclaimer>
+            <Copyright aria-label="Direitos autorais">Copyright © 2024 Lacrei Saúde. Todos os direitos reservados. CNPJ: 51.265.351/0001-65</Copyright>
         </StyledFooter>
     )
 }

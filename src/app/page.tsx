@@ -49,14 +49,16 @@ const HeroTextBlock = styled.div`
 `;
 
 const HeroTitle = styled.h1`
-  line-height: 1.2;
   color: #018762;
   font-size: 48px;
   font-weight: Bold;
-  line-height: 120px; //this is deforming the title, but is set as the Guia de Estilo Marshall indicates.
+  // line-height: 120px;
+  line-height: 1.2;
+  margin-bottom: 32px;
 
   @media (max-width: 900px) {
     font-size: 2.2rem;
+    margin-bottom: 24px;
   }
 `;
 
@@ -65,6 +67,7 @@ const HeroText = styled.p`
   font-size: 24px;
   font-weight: Regular;
   line-height: 150%;
+  margin-bottom: 32px;
 
   @media (max-width: 900px) {
     font-size: 1.1rem;
@@ -73,11 +76,12 @@ const HeroText = styled.p`
 
 const HeroButtonsContainer = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 24px;
 
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;
+    gap: 24px;
   }
 `;
 
@@ -95,6 +99,9 @@ const PrimarySolidButton = styled.button`
   transition: background-color 0.3s ease;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
   height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background-color: #007756;
@@ -108,7 +115,8 @@ const PrimarySolidButton = styled.button`
 
 const Section = styled.section<{ $backgroundColor?: string }>`
   width: 100%;
-  padding: 4rem 5%;
+  margin-top: 48px;
+
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -116,26 +124,28 @@ const Section = styled.section<{ $backgroundColor?: string }>`
   background-color: ${(props) => props.$backgroundColor || 'transparent'};
 
   @media (max-width: 900px) {
-    padding: 3rem 1.5rem;
     background-color: #FFFFFF;
   }
 `;
 
 const SectionOneTitle = styled.h2`
-  font-size: 2.5rem;
+  font-size: 42px;
   color: #131313;
   margin: 0;
   text-align: flex-start;
+  margin-bottom: 32px;
 
   @media (max-width: 900px) {
     font-size: 2rem;
+    margin-bottom: 24px;
   }
 `;
 
 const SectionOneSubtitle = styled.p`
-  font-size: 1.25rem;
+  font-size: 24px;
+  font-weight: Regular;
+  line-height: 150%;
   color: #404040;
-  margin-top: 0.5rem;
   text-align: center;
 `;
 
@@ -144,19 +154,24 @@ const SeparatorOneDividingLine = styled.div`
   height: 4px;
   background: #018762;
   border-radius: 4px;
-  margin: 1rem 0;
+  margin: 32px 0;
+
+   @media (max-width: 900px) {
+    margin: 24px 0;
+  }
 `;
 
 const ThreeItemsGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  gap: 24px;
   width: 100%;
   max-width: 1100px;
-  margin-top: 3rem;
+  margin-top: 48px;
 
   @media (max-width: 900px) {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 `;
 
@@ -265,12 +280,11 @@ const DefaultOutlineButton = styled.button`
     border: 2px solid #018762;
     transition: all 0.3s ease;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-    margin-top: 1.5rem;
+    margin-top: 32px;
 
     &:hover {
       background-color: #007756;
       color: #ffffff;
-      transform: translateY(-3px);
       box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.05);
     }
 
@@ -290,11 +304,11 @@ export default function Home () {
         <HeroTitle>Olá, você está na Lacrei Saúde!</HeroTitle>
         <HeroText>Conectamos pessoas <strong>LGBTQIAPN+</strong> com profissionais de saúde qualificados, proporcionando experiências de cuidado seguras e inclusivas.</HeroText>
         <HeroButtonsContainer>
-          <PrimarySolidButton>
-            <Link href='https://paciente.lacreisaude.com.br/'>Para pacientes</Link>
+          <PrimarySolidButton aria-label="Para pacientes" as={Link} href='https://paciente.lacreisaude.com.br/' >
+            Para pacientes
           </PrimarySolidButton>
-          <PrimarySolidButton>
-          <Link href='https://profissional.lacreisaude.com.br/'>Para profissionais</Link>
+          <PrimarySolidButton aria-label="Para profissionais" as={Link} href='https://profissional.lacreisaude.com.br/'>
+            Para profissionais
           </PrimarySolidButton>
         </HeroButtonsContainer>
       </HeroTextBlock>
@@ -306,17 +320,17 @@ export default function Home () {
       <SectionOneSubtitle>Atendimento de qualidade e inclusivo</SectionOneSubtitle>
       <ThreeItemsGrid>
         <CardLacrei>
-          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/handshake-icon.422966a2.svg'} alt="Ícone de aperto de mãos"/>
+          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/handshake-icon.422966a2.svg'} alt="Ícone de aperto de mãos" aria-label="Ícone de aperto de mãos"/>
           <CardTitle>Inclusão</CardTitle>
           <CardText>Nossa plataforma digital é acessível e atendemos toda comunidade LGBTQIAPN+.</CardText>
         </CardLacrei>
         <CardLacrei>
-          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/heart-icon.081c2229.svg'} alt="Ícone de coração"/>
+          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/heart-icon.081c2229.svg'} alt="Ícone de coração" aria-label="Ícone de coração"/>
           <CardTitle>Acolhimento</CardTitle>
           <CardText>As pessoas profissionais da saúde entendem as necessidades da comunidade LGBTQIAPN+.</CardText>
         </CardLacrei>
         <CardLacrei>
-          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/shield-icon.54d509f2.svg'} alt="Ícone de escudo"/>
+          <CardIcon src={'https://lacreisaude.com.br/_next/static/media/shield-icon.54d509f2.svg'} alt="Ícone de escudo" aria-label="Ícone de escudo"/>
           <CardTitle>Segurança</CardTitle>
           <CardText>Protegemos seus dados e validamos pacientes e profissionais da saúde.</CardText>
         </CardLacrei>
@@ -325,15 +339,16 @@ export default function Home () {
     
     <Section>
       <AboutSectionGrid>
-        <AboutImage src={'https://lacreisaude.com.br/_next/static/media/people-holding-flag.8d096827.png'} alt="Pessoas segurando a bandeira do arco-íris"/>
+        <AboutImage src={'https://lacreisaude.com.br/_next/static/media/people-holding-flag.8d096827.png'} alt="Pessoas segurando a bandeira do arco-íris" aria-label="Pessoas segurando a bandeira do arco-íris"/>
         <AboutTextBlock>
           <SectionOneTitle>O que é a Lacrei Saúde?</SectionOneTitle>
           <SeparatorOneDividingLine />
           <CardText $textAlign="left">O nosso papel é construir a conexão entre as pessoas da comunidade LGBTQIAPN+ que precisam de atendimento clínico com profissionais da saúde.</CardText> 
           <CardText $textAlign="left" $marginTop="1rem">Tudo isso com segurança, inclusão e representatividade.</CardText>
           <CardText $textAlign="left" $marginTop="1rem">Surgimos da esperança de ter um atendimento clínico qualificado, seguro e empático para todas as pessoas.</CardText>
-          <DefaultOutlineButton>
-            <Link href='https://lacreisaude.com.br/quem-somos/'>Conhecer</Link>
+          <DefaultOutlineButton aria-label="Conhecer a Lacrei Saúde" as={Link} href='https://lacreisaude.com.br/quem-somos/'>
+            Conhecer
+            
           </DefaultOutlineButton>
         </AboutTextBlock>
       </AboutSectionGrid>

@@ -6,30 +6,53 @@ import 'jest-styled-components';
 
 
 describe('Header Component Responsiveness', () => {
-
   it('should have the correct CSS rules for desktop and mobile views', () => {
-    render(<Header />);
+    const { getByTestId } = render(<Header />);
 
-    const ajudaButton = screen.getByRole('link', { name: 'Ajuda' }).parentElement;
-    const homeButton = screen.getByAltText('Logo').parentElement?.parentElement;
-    const mobileTitle = screen.getByText('Lacrei Saúde');
+    const desktopLogo = getByTestId('desktop-logo');
+    const mobileLogo = getByTestId('mobile-logo');
+    const ajudaButton = getByTestId('ajuda-button');
 
-    expect(homeButton).not.toHaveStyleRule('display', 'none');
-    
-    expect(ajudaButton).not.toHaveStyleRule('display', 'none');
 
-    expect(mobileTitle).toHaveStyleRule('display', 'none');
-
-    expect(homeButton).toHaveStyleRule('display', 'none', {
+    expect(desktopLogo).not.toHaveStyleRule('display', 'none');
+    expect(desktopLogo).toHaveStyleRule('display', 'none', {
       media: '(max-width: 768px)',
     });
 
+
+    expect(mobileLogo).toHaveStyleRule('display', 'none');
+    expect(mobileLogo).toHaveStyleRule('display', 'block', {
+      media: '(max-width: 768px)',
+    });
+
+
+    expect(ajudaButton).not.toHaveStyleRule('display', 'none');
     expect(ajudaButton).toHaveStyleRule('display', 'none', {
       media: '(max-width: 768px)',
     });
-    
-    expect(mobileTitle).toHaveStyleRule('display', 'block', {
-      media: '(max-width: 768px)',
-    });
   });
+
+    it('should navigate to /ajuda when Ajuda button is clicked', async () => {
+      render(<Header />);
+      const ajudaLink = screen.getByRole('link', { name: /ajuda/i });
+      expect(ajudaLink).toHaveAttribute('href', '/ajuda');
+    });
+
+
+  it('should have accessible aria-labels and alt attributes', () => {
+    render(<Header />);
+
+    const desktopLogo = screen.getByTestId('desktop-logo');
+    expect(desktopLogo).toHaveAttribute('alt');
+    expect(desktopLogo).toHaveAttribute('aria-label', expect.stringContaining('Lacrei Saúde'));
+
+    const mobileLogo = screen.getByTestId('mobile-logo');
+    expect(mobileLogo).toHaveAttribute('alt');
+    expect(mobileLogo).toHaveAttribute('aria-label', expect.stringContaining('Lacrei Saúde'));
+
+    const ajudaButton = screen.getByTestId('ajuda-button');
+    expect(ajudaButton).toHaveAttribute('aria-label', expect.stringContaining('Ajuda'));
+  });
+
+
 });
