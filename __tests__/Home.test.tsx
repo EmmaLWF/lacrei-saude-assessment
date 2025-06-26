@@ -45,10 +45,10 @@ describe('Home page', () => {
   it('should have correct aria-labels on key elements', () => {
     render(<Home />);
     // Main action buttons
-    const pacientesButton = screen.getByRole('link', { name: /para pacientes/i });
-    expect(pacientesButton).toHaveAttribute('aria-label', expect.stringContaining('Para pacientes'));
-    const profissionaisButton = screen.getByRole('link', { name: /para profissionais/i });
-    expect(profissionaisButton).toHaveAttribute('aria-label', expect.stringContaining('Para profissionais'));
+    const pacientesButton = screen.getByRole('link', { name: /Ir para página de login do pacientes/i });
+    expect(pacientesButton).toHaveAttribute('aria-label', expect.stringContaining('Ir para página de login do pacientes'));
+    const profissionaisButton = screen.getByRole('link', { name: /Ir para página de login do profissionais da saúde/i });
+    expect(profissionaisButton).toHaveAttribute('aria-label', expect.stringContaining('Ir para página de login do profissionais da saúde'));
     // Conhecer button
     const conhecerButton = screen.getByRole('link', { name: /conhecer/i });
     expect(conhecerButton).toHaveAttribute('aria-label', expect.stringContaining('Conhecer'));

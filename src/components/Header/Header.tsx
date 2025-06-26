@@ -7,15 +7,22 @@ import Image from 'next/image';
 
 
 const StyledHeader = styled.header`
-  padding: 24px;
+  padding: 24px 122px;
   background: linear-gradient(105.43deg, #F5FFFB 14.39%, #FFFFFF 84.69%);
+  margin-bottom: 48px;
+
+  @media (max-width: 900px) {
+    padding: 24px;
+    margin-bottom: 24px;
+  }
 `;
 
 const LogoImage = styled.img`
-  height: 35px;
   display: block;
+  width: 202.92px;
+  height: 24px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     display: none;
   }
 `;
@@ -24,7 +31,6 @@ const NavBar = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  // height: 96px;
 `;
 
 const MobileLogo = styled.img`
@@ -35,11 +41,8 @@ const MobileLogo = styled.img`
   cursor: pointer;
   justify-content: center;
   align-items: center;
-  min-width: 24px;
-  min-height: 24px;
-  border-radius: 8px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 900px) {
     display: block;
   }
 
@@ -47,46 +50,68 @@ const MobileLogo = styled.img`
 
 const MobileHelpIcon = styled.a`
   display: none;
-  font-color: #018762;
+  width: 48px;
+  height: 48px;
+  background-color: none;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
 
-  @media (max-width: 768px) {
-    display: block;
+  @media (max-width: 900px) {
+    display: flex;
+
+    &:active {
+    background-color: #B2DFD0; 
+    }
+
+    &:focus {
+      background-color: #FFFFFF;
+      outline: none;
+      border: 2px solid #4D8ACB;
+      border-radius: 8px;
+
+    }
   }
 `;
 
 
-const AjudaButtonLink = styled.a`
+const AjudaButtonLink = styled(Link)`
   background: none;
-  border: 1px solid transparent;
+  border: 2px solid transparent;
   color: #018762;
-  cursor: pointer;
-  font-weight: regular;
-  display: flex;
+  border-radius: 8px;
+  border-with: none;
+  height: 48px;
   font-size: 18px;
+  font-weight: bold;
   line-height: 150%;
+  text-align: center;
+  padding: 16px 32px 16px 32px;
+  cursor: pointer;
+  display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 24px;
-  min-height: 24px;
-  border-radius: 8px;
-  width: 174px;
-  height: 48px;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 12px 24px;
-  border: 1px solid transparent;
-  border-radius: 5px;
 
   &:hover {
-    background-color: #F0F0F0;
+    background-color: #DFF2ED;
+    color: #007756;
   }
 
-  &:focus-visible {
+   &:active {
+    background-color: #B2DFD0; 
+    color: #007756;
+  }
+
+  &:focus {
+    background-color: none;
+    color: #018762;
     outline: none;
     border: 2px solid #4D8ACB;
+    border-radius: 8px;
+
   }
 
-   @media (max-width: 768px) {
+   @media (max-width: 900px) {
     display: none;
     min-width: 44px;
     min-height: 44px;

@@ -11,11 +11,13 @@ const HeroSection = styled.div`
   position: relative; 
   width: 100%;
   height: 70vh;
+  margin-bottom: 48px;
 
   @media (max-width: 900px) {
     height: auto;
     display: flex;
     flex-direction: column;
+    margin-bottom: 40px;
   }
 `;
 
@@ -38,7 +40,7 @@ const HeroTextBlock = styled.div`
   max-width: 550px;
 
   @media (max-width: 900px) {
-    position: static;
+    position: absolute;
     transform: none;
     max-width: 100%;
     padding: 2rem 1.5rem;
@@ -48,17 +50,34 @@ const HeroTextBlock = styled.div`
   }
 `;
 
+const CardHeroMobile = styled.div`
+  
+  @media (max-width: 900px) {
+
+  width: 327px;
+  border: 2px solid #CFCFCF;
+  background-color: #FFFFFF;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
+
+
+`;
+
 const HeroTitle = styled.h1`
   color: #018762;
   font-size: 48px;
   font-weight: Bold;
-  // line-height: 120px;
-  line-height: 1.2;
-  margin-bottom: 32px;
+  line-height: 120%;
+  margin-bottom: 16px;
+  text-align: left;
 
   @media (max-width: 900px) {
-    font-size: 2.2rem;
     margin-bottom: 24px;
+    font-size: 32px;
   }
 `;
 
@@ -68,9 +87,16 @@ const HeroText = styled.p`
   font-weight: Regular;
   line-height: 150%;
   margin-bottom: 32px;
+  text-align: left;
 
   @media (max-width: 900px) {
-    font-size: 1.1rem;
+    font-size: 16px;
+    font-weight: Regular;
+    line-height: 150%;
+    text-width: 279px;
+    text-height: 72px;
+    text-color: #2D2D2D;
+    spacing-insent: 32px;
   }
 `;
 
@@ -85,20 +111,21 @@ const HeroButtonsContainer = styled.div`
   }
 `;
 
-const PrimarySolidButton = styled.button`
-  background-color: #018762;
-  color: #FFFFFF;
-  border: none;
-  border-radius: 8px;
-  padding: 0px 32px;
-  font-size: 18px;
-  font-weight: regular;
-  line-height: 150%;
-  text-align: center;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+const HeroPrimarySolidButton = styled.button`
+  
   height: 48px;
+  background-color: #018762;
+  border-radius: 8px; 
+  border-width: none;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 150%;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 0px 32px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -111,6 +138,11 @@ const PrimarySolidButton = styled.button`
       color: inherit;
       text-decoration: none;
     }
+
+  @media (max-width: 900px) {
+    width: 279px;
+    height: 48px;
+  }
 `;
 
 const Section = styled.section<{ $backgroundColor?: string }>`
@@ -125,6 +157,7 @@ const Section = styled.section<{ $backgroundColor?: string }>`
 
   @media (max-width: 900px) {
     background-color: #FFFFFF;
+    margin-top: 192px;
   }
 `;
 
@@ -186,9 +219,6 @@ const CardLacrei = styled.div`
   text-align: center;
   background-color: #F9F3FF;
   padding: 2.5rem 2rem;
-  // size: 356 x 288 px;
-  // width: fixed;
-  // height: fixed;
 
 
 `;
@@ -243,7 +273,7 @@ const AboutImage = styled.img`
   object-fit: cover;
   z-index: 1; 
 
-  @media (max-width: 950px) {
+  @media (max-width: 900px) {
   display: none;
 `;
 
@@ -262,12 +292,13 @@ const AboutTextBlock = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  @media (max-width: 909px) {
+  @media (max-width: 900px) {
     width: 90%;
     margin-left: 0;
     z-index: auto;
   } 
 `;
+
 
 const DefaultOutlineButton = styled.button`  
     padding: 12px 28px;
@@ -301,16 +332,18 @@ export default function Home () {
     <HeroSection>
       <HeroImage src={'https://lacreisaude.com.br/_next/static/media/greetings-banner-image.3ec83257.png'} alt="Fundo com cores da bandeira LGBTQIAPN+ e um estetoscópio"/>
       <HeroTextBlock>
-        <HeroTitle>Olá, você está na Lacrei Saúde!</HeroTitle>
-        <HeroText>Conectamos pessoas <strong>LGBTQIAPN+</strong> com profissionais de saúde qualificados, proporcionando experiências de cuidado seguras e inclusivas.</HeroText>
-        <HeroButtonsContainer>
-          <PrimarySolidButton aria-label="Para pacientes" as={Link} href='https://paciente.lacreisaude.com.br/' >
-            Para pacientes
-          </PrimarySolidButton>
-          <PrimarySolidButton aria-label="Para profissionais" as={Link} href='https://profissional.lacreisaude.com.br/'>
-            Para profissionais
-          </PrimarySolidButton>
-        </HeroButtonsContainer>
+        <HeroTitle>Olá, você está <span style={{ whiteSpace: 'nowrap' }}>na Lacrei Saúde!</span></HeroTitle>
+        <CardHeroMobile>
+          <HeroText>Conectamos pessoas <strong>LGBTQIAPN+</strong> com profissionais de saúde qualificados, proporcionando experiências de cuidado seguras e inclusivas.</HeroText>
+          <HeroButtonsContainer>
+            <HeroPrimarySolidButton aria-label="Ir para página de login do pacientes" as={Link} href='https://paciente.lacreisaude.com.br/' >
+              Para pacientes
+            </HeroPrimarySolidButton>
+            <HeroPrimarySolidButton aria-label="Ir para página de login do profissionais da saúde" as={Link} href='https://profissional.lacreisaude.com.br/'>
+              Para profissionais
+            </HeroPrimarySolidButton>
+          </HeroButtonsContainer>
+        </CardHeroMobile>
       </HeroTextBlock>
     </HeroSection>
 

@@ -56,7 +56,6 @@ const Answer = styled.div`
   border-width: 1px;
   border-radius: 8px;
   width: 80vw;
-  // box-shadow: 0 8px 12px #515151;
   color: #404040;
   line-height: 1.6;
   display: flex;
@@ -78,7 +77,6 @@ const QandA: React.FC<QandAItemProps> = ({ question, answer }) => {
   };
 
   const handleKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
-    console.log('event.key', event.key);
     if (event.key === 'Enter' || event.key === ' ') {
       event.preventDefault();
       toggleOpen();

@@ -16,19 +16,19 @@ describe('Header Component Responsiveness', () => {
 
     expect(desktopLogo).not.toHaveStyleRule('display', 'none');
     expect(desktopLogo).toHaveStyleRule('display', 'none', {
-      media: '(max-width: 768px)',
+      media: '(max-width: 900px)',
     });
 
 
     expect(mobileLogo).toHaveStyleRule('display', 'none');
     expect(mobileLogo).toHaveStyleRule('display', 'block', {
-      media: '(max-width: 768px)',
+      media: '(max-width: 900px)',
     });
 
 
     expect(ajudaButton).not.toHaveStyleRule('display', 'none');
     expect(ajudaButton).toHaveStyleRule('display', 'none', {
-      media: '(max-width: 768px)',
+      media: '(max-width: 900px)',
     });
   });
 
